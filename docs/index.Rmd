@@ -1,0 +1,52 @@
+---
+title: "Roman E. Reggiardo (He/Him)"
+image: "rer_small_pic.jpg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/roman-reggiardo/"
+  - label: Twitter
+    url: "https://twitter.com/ReggiardoRoman"
+  - label: GitHub
+    url: "https://github.com/rreggiar"
+  - label: Email
+    url: "rreggiar@ucsc.edu"
+output:
+  postcards::trestles
+---
+ 
+## Bio
+
+Hello! I'm finishing my PhD in Bioengineering and Bionformatics at UC Santa Cruz
+under supervision of Assistant Professor Daniel Kim. I am an **NIH F99/K00 fellow
+supported by the NIDDK-KUH** to complete my thesis work (F99) developing novel RNA 
+liquid biopsies for the non-invasive detection and characterization of Lung and 
+Pancreatic cancers and have an additional (K00) 4-years of funding to expand 
+extracellular RNA research into hematological applications. In addition to my 
+academic training, I have also **interned with (and currenty consult for) 
+Bluestar Genomics**, one of the leaders in commercial liquid biopsy technology. My
+expertise is in bioinformatics and applied machine learning/statistics -- techniques
+I have used to help advance academic (RNA) and industrial (DNA) liquid biopsy 
+approaches. 
+
+I'll soon be seeking Post Doctoral positions that enable my 
+K00-supported research and my continued growth as a scientist, mentor, and human.
+
+## Education
+
+**University of California, Santa Cruz** | Santa Cruz, CA
+
+Ph.D. in Bioengineering & Bioinformatics | September 2017 - May 2023 (est.)
+
+**University of California, Santa Cruz** | Santa Cruz, CA
+
+B.S. in Biochemistry and Molecular Biology | September 2012 - June 2017
+
+## Experience
+
+**UCSC CITL Graduate Pedagogy** | Fellow | January 2022 - Present
+
+**NIDDK-KUH F99/K00** | Fellow | September 2021 - September 2026 (est.)
+
+**Bionformatics Scientist** | Intern > Consultant | June 2021 - Present
+
+**Teaching Assistant for numerous courses**
