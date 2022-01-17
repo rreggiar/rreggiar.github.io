@@ -24,6 +24,7 @@ docker run --rm -p 127.0.0.1:"${PORT}":8787 -e DISABLE_AUTH=true \
 	-e USER="${USER}" \
 	-e USERID="${USER_ID}" \
 	-e ROOT=TRUE \
+	--name "${PROJ}" \
 	--detach \
 	-v "${DIR}" \
 	kimlab_rstudio:latest
