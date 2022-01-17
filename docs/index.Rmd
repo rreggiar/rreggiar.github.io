@@ -9,7 +9,7 @@ links:
   - label: GitHub
     url: "https://github.com/rreggiar"
   - label: Email
-    url: "rreggiar@ucsc.edu"
+    url: "mailto:rreggiar@ucsc.edu"
   - label: Google Scholar
     url: "https://scholar.google.com/citations?user=82aJS_YAAAAJ&hl=en"
 output:
@@ -51,4 +51,7 @@ B.S. in Biochemistry and Molecular Biology | September 2012 - June 2017
 
 **Bionformatics Scientist** | Intern > Consultant | June 2021 - Present
 
-**Teaching Assistant for numerous courses**
+**Teaching Assistant for:** Data Viz, Stem Cell Biology, Molecular Biology Lab, Intro to Comp. Bio, and more ...
+
+*I made this with [postcards](https://github.com/seankross/postcards)*
+
