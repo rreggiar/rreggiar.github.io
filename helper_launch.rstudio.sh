@@ -16,8 +16,8 @@ echo "for project: "${PROJ}" "
 # user & project specific mounts
 DIR="/public/home/"${USER}"/"${PROJ}"/:/home/"${USER}"/"
 # rreggiar config file for RSTUDIO looks and behavior
-#CONFIG="/public/home/"${USER}"/.rstudio_docker_config:/home/"${USER}"/.config/rstudio"
-	#-v "${CONFIG}" \
+CONFIG="/public/home/"${USER}"/.rstudio_docker_config:/home/"${USER}"/.config/rstudio"
+	-v "${CONFIG}" \
 
 echo "making rstudio session hosted at 127.0.0.1:"${PORT}":8787 for "${USER}":"${USER_ID}""
 docker run --rm -p 127.0.0.1:"${PORT}":8787 -e DISABLE_AUTH=true \
