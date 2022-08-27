@@ -12,6 +12,7 @@ links:
     url: "mailto:rreggiar@ucsc.edu"
   - label: Google Scholar
     url: "https://scholar.google.com/citations?user=82aJS_YAAAAJ&hl=en"
+
 output:
   postcards::trestles
 ---
@@ -49,6 +50,8 @@ writing a report as a Baskin Engineering Anti-Racist Research fellow.
 Additionally, I'll be deciding on the destination for my post-doc.
 
 ## Education
+
+ - [CV]('docs/roman_reggiardo_CV_07_2022.pdf') 
 
 **University of California, Santa Cruz** | Santa Cruz, CA
 
