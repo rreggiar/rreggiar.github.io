@@ -18,8 +18,11 @@ output:
 
 ## News
 
-Our work on mutant KRAS-driven epigenomic changes in early tumorigenesis is out now [published  in *Cell Reports*!](https://www.cell.com/cell-reports/fulltext/S2211-1247(22)00906-8)
- 
+2022-08 -- I just wrapped up teaching the 2022 UCSC Genomics Institute Summer Short Course in Bioinformatics, check out the course material and website [here](https://rreggiar.github.io/ucsc_scbc_2022/).
+
+2022-07 -- Our work on mutant KRAS-driven epigenomic changes in early tumorigenesis is out now [published  in *Cell Reports*!](https://www.cell.com/cell-reports/fulltext/S2211-1247(22)00906-8)
+
+
 ## Bio
 
 Hello! I'm finishing my PhD in Bioengineering and Bionformatics at UC Santa Cruz
@@ -54,6 +57,10 @@ Ph.D. in Bioengineering & Bioinformatics | September 2017 - May 2023 (est.)
 **University of California, Santa Cruz** | Santa Cruz, CA
 
 B.S. in Biochemistry and Molecular Biology | September 2012 - June 2017
+
+## Resources
+
+ - [UCSC SCBC 2022 course](https://rreggiar.github.io/ucsc_scbc_2022/)
 
 ## Support
 
