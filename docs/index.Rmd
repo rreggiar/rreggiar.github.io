@@ -18,8 +18,7 @@ output:
 
 ## News
 
-The manuscript I've been working on for 4 years (since my first day in Dr. Kim's lab)
-is finally accepted for publication -- details soon.
+Our work on mutant KRAS-driven epigenomic changes in early tumorigenesis is out now [published  in *Cell Reports*!](https://www.cell.com/cell-reports/fulltext/S2211-1247(22)00906-8)
  
 ## Bio
 
