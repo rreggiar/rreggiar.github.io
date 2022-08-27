@@ -51,7 +51,7 @@ Additionally, I'll be deciding on the destination for my post-doc.
 
 ## Education
 
- - [CV](docs/roman_reggiardo_CV_07_2022.pdf)
+ - [CV](https://github.com/rreggiar/rreggiar.github.io/blob/7cc88cea19990c5723a14d8e30f021fd59341d52/docs/roman_reggiardo_CV_07_2022.pdf)
 
 **University of California, Santa Cruz** | Santa Cruz, CA
 
