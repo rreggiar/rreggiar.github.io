@@ -1,1 +1,1 @@
-Sitemap: https://rreggiar.github.io/sitemap.xml
+Sitemap: https://github.com/rreggiar/rreggiar.github.io/sitemap.xml
