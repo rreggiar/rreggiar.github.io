@@ -1,0 +1,38 @@
+project:
+  type: website
+
+website:
+  title: "rreggiar.github.io"
+  navbar:
+    tools:
+    - text: LinkedIn
+      icon: linkedin
+      href: "https://www.linkedin.com/in/roman-reggiardo/"
+    - text: Twitter
+      icon: twitter
+      href: "https://twitter.com/ReggiardoRoman"
+    - text: GitHub
+      icon: github
+      href: "https://github.com/rreggiar"
+    - text: Email
+      icon: mailbox
+      href: "mailto:rreggiar@ucsc.edu"
+    - text: Google Scholar
+      icon: google
+      href: "https://scholar.google.com/citations?user=82aJS_YAAAAJ&hl=en"
+    left:
+      - href: index.qmd
+        text: home
+      - about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+execute:
+  freeze: auto
+
+
+
