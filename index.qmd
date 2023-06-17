@@ -3,20 +3,21 @@ title: "Roman E. Reggiardo, soon-to-be-PhD"
 image-align: left
 ---
 
-# Works
+# works
 
 
-## *Cell Reports* Reggiardo, *et al* 2022
+## *Cell Reports* -- Reggiardo, *et al* 2022
+![](https://www.cell.com/cell-reports/pdf/S2211-1247(22)00906-8.pdf)
+[Mutant KRAS regulates transposable element RNA and innate immunity via KRAB zinc-finger genes](https://pubmed.ncbi.nlm.nih.gov/35858545/)
 
-![Mutant KRAS regulates transposable element RNA and innate immunity via KRAB zinc-finger genes](https://www.cell.com/cell-reports/pdf/S2211-1247(22)00906-8.pdf)
-
-## *Springer Nature* Reggiardo, *et al* 2022
-![cover](lnc_chapter_cover.jpg.webp)
+## *Springer Nature* -- Reggiardo, *et al* 2022
+![cover](images/lnc_chapter_cover.jpg.webp)
 [LncRNA Biomarkers of Inflammation and Cancer](https://link.springer.com/chapter/10.1007/978-3-030-92034-0_7)
 
+# featured
 
 
-# News
+# updates
 
 **2023-06** -- Paper accepted ... 
 

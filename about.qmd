@@ -1,7 +1,7 @@
 ---
 title: "about"
 about:
-  image: "rer_blurry_profile.jpg"
+  image: "images/rer_blurry_profile.jpg"
   template: trestles
   links:
     - text: LinkedIn
