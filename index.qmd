@@ -1,6 +1,8 @@
 ---
 title: "Roman E. Reggiardo, soon-to-be-PhD"
-image-align: left
+bibliography: assets/my_bib.bib
+nocite: |
+  @*
 ---
 
 # updates
@@ -15,15 +17,14 @@ image-align: left
 
 # featured
 
+- [STUDY VALIDATING CLEARNOTE HEALTH’S AVANTECT PANCREATIC CANCER DETECTION TEST PUBLISHED IN THE JOURNAL CLINICAL GASTROENTEROLOGY AND HEPATOLOGY](https://www.clearnotehealth.com/press-release/study-validating-clearnote-healths-avantect-pancreatic-cancer-detection-test-published-in-the-journal-clinical-gastroenterology-and-hepatology/)
+
 - [Closing cell—and academic—gaps](https://news.ucsc.edu/2022/11/genomics-summer-programs.html)
+
 - [Hallmark cancer gene regulates RNA ‘dark matter’](https://news.ucsc.edu/2022/07/kim-cell-reports.html)
 
 # works
 
-## *Cell Reports* -- Reggiardo, *et al* 2022
-![pdf](https://www.cell.com/cell-reports/pdf/S2211-1247(22)00906-8.pdf)
-[Mutant KRAS regulates transposable element RNA and innate immunity via KRAB zinc-finger genes](https://pubmed.ncbi.nlm.nih.gov/35858545/)
+::: {#refs}
+:::
 
-## *Springer Nature* -- Reggiardo, *et al* 2022
-![cover](images/lnc_chapter_cover.jpg.webp)
-[LncRNA Biomarkers of Inflammation and Cancer](https://link.springer.com/chapter/10.1007/978-3-030-92034-0_7)
