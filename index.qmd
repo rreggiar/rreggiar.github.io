@@ -11,6 +11,7 @@ image-align: left
 ![Mutant KRAS regulates transposable element RNA and innate immunity via KRAB zinc-finger genes](https://www.cell.com/cell-reports/pdf/S2211-1247(22)00906-8.pdf)
 
 ## *Springer Nature* Reggiardo, *et al* 2022
+![cover](lnc_chapter_cover.jpg.webp)
 [LncRNA Biomarkers of Inflammation and Cancer](https://link.springer.com/chapter/10.1007/978-3-030-92034-0_7)
 
 
