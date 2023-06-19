@@ -1,6 +1,7 @@
 ---
-title: "Roman E. Reggiardo, soon-to-be-PhD"
 bibliography: assets/my_bib.bib
+zotero: "my_works"
+csl: assets/modern-language-association.csl
 nocite: |
   @*
 ---
@@ -23,7 +24,7 @@ nocite: |
 
 - [Hallmark cancer gene regulates RNA ‘dark matter’](https://news.ucsc.edu/2022/07/kim-cell-reports.html)
 
-# works
+# [works](https://www.ncbi.nlm.nih.gov/myncbi/roman.reggiardo.1/bibliography/public/)
 
 ::: {#refs}
 :::
