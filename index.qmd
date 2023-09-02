@@ -5,6 +5,7 @@ csl: assets/modern-language-association.csl
 nocite: |
   @*
 ---
+**email**: rreggiar <@> stanford [dot] edu
 
 # updates
 

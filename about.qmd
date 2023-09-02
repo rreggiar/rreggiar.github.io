@@ -17,7 +17,7 @@ about:
       icon: google
       href: "https://scholar.google.com/citations?user=82aJS_YAAAAJ&hl=en"
 ---
-rreggiar <@> stanford.edu
+**email**: rreggiar <@> stanford [dot] edu
 
 ## Summary
 
