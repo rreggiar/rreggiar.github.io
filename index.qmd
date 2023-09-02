@@ -8,15 +8,22 @@ nocite: |
 
 # updates
 
-**2023-06** -- Paper accepted ... 
+**2023-08** -- Finally, 
+the main focus of my PhD is published in [*Nature Biomedical Engineering*](https://www.nature.com/articles/s41551-023-01081-7):
+The reveal of our repeat-aware approach to RNA liquid biopsy.
 
-**2022-12** -- Post doc selected ... 
+**2023-08** -- I'm now staring my K00-funded postdoctoral appointment at *Stanford University* 
+with **Howard Y. Chang**!!
 
-**2022-08** -- I just wrapped up teaching the 2022 UCSC Genomics Institute Summer Short Course in Bioinformatics, check out the course material and website [here](https://rreggiar.github.io/ucsc_scbc_2022/).
+**2022-08** -- I just wrapped up teaching the 2022 UCSC Genomics Institute Summer Short Course in Bioinformatics, check out the course material and website [here](https://rreggiar.github.io/ucsc_scbc_2022/).  
+  - I managed another instance of this class in the summer of 2023, 
+  the link is updated with info from that session
 
 **2022-07** -- Our work on mutant KRAS-driven epigenomic changes in early tumorigenesis is out now [published  in *Cell Reports*!](https://www.cell.com/cell-reports/fulltext/S2211-1247(22)00906-8)
 
 # featured
+
+- [New blood test for noncoding RNA significantly improves cancer detection](https://news.ucsc.edu/2023/08/kim-naturebme23.html)
 
 - [STUDY VALIDATING CLEARNOTE HEALTH’S AVANTECT PANCREATIC CANCER DETECTION TEST PUBLISHED IN THE JOURNAL CLINICAL GASTROENTEROLOGY AND HEPATOLOGY](https://www.clearnotehealth.com/press-release/study-validating-clearnote-healths-avantect-pancreatic-cancer-detection-test-published-in-the-journal-clinical-gastroenterology-and-hepatology/)
 
