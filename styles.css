@@ -7,13 +7,14 @@ body {
     color: #00ff00; /* Green text color for a classic terminal look */
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol, li {
-    display: none; /* Hide all headings and lists */
+h1, h2, h3, h4, h5, h6 {
+    display: none; /* Hide headings */
 }
 
-p {
+p, ul, ol, li {
     margin: 0; /* Remove margins */
     padding: 0; /* Remove padding */
+    color: #00ff00; /* Ensure text is green */
 }
 
 a {
