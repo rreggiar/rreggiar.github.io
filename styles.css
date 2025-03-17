@@ -1,6 +1,5 @@
 body {
     font-family: 'Courier New', Courier, monospace; /* Monospace font for a hacker look */
-    white-space: pre; /* Preserve whitespace and line breaks */
     margin: 0;
     padding: 20px; /* Add some padding */
     background-color: #000; /* Black background for a terminal feel */
