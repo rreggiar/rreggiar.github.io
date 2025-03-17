@@ -1,11 +1,17 @@
 body {
-    font-family: monospace; /* Use a monospace font for plain text appearance */
-    white-space: pre; /* Preserve whitespace */
+    font-family: monospace; /* Use a monospace font for a plain text appearance */
+    white-space: pre; /* Preserve whitespace and line breaks */
     margin: 0;
     padding: 20px; /* Add some padding */
+    background-color: #f5f5f5; /* Light background for contrast */
+    color: #333; /* Dark text color */
 }
 
 h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+    display: none; /* Hide all headings and lists */
+}
+
+p {
     margin: 0; /* Remove margins */
     padding: 0; /* Remove padding */
 }
@@ -15,34 +21,7 @@ a {
     text-decoration: none; /* Remove underline from links */
 }
 
-img {
-    max-width: 100%; /* Make images responsive */
-    height: auto;
-}
-
-/* Additional styles for better formatting */
-h2 {
-    font-size: 1.5em; /* Adjust heading size */
-    margin-top: 20px; /* Add space above */
-}
-
-h3 {
-    font-size: 1.2em; /* Adjust heading size */
-    margin-top: 15px; /* Add space above */
-}
-
-p {
-    margin-bottom: 10px; /* Add space between paragraphs */
-}
-
-/* Reset styles for lists */
 ul, ol {
-    padding-left: 20px; /* Add padding for lists */
+    padding-left: 0; /* Remove padding for lists */
     margin: 0; /* Remove margin */
-}
-
-/* Reset styles for links */
-a {
-    color: inherit; /* Make links inherit the text color */
-    text-decoration: none; /* Remove underline from links */
 }

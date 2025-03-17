@@ -1,7 +1,5 @@
 <link rel="stylesheet" href="styles.css">
 
-## roman reggiardo, PhD
-
 building with biology and computers (and occasionally soap dispensers),
 liquid biopsy @ UC Santa Cruz and ClearNote,
 now more molecular engineering @ Stanford
