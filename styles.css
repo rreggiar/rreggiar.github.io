@@ -1,10 +1,10 @@
 body {
-    font-family: monospace; /* Use a monospace font for a plain text appearance */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for a hacker look */
     white-space: pre; /* Preserve whitespace and line breaks */
     margin: 0;
     padding: 20px; /* Add some padding */
-    background-color: #f5f5f5; /* Light background for contrast */
-    color: #333; /* Dark text color */
+    background-color: #000; /* Black background for a terminal feel */
+    color: #00ff00; /* Green text color for a classic terminal look */
 }
 
 h1, h2, h3, h4, h5, h6, p, ul, ol, li {
@@ -17,7 +17,7 @@ p {
 }
 
 a {
-    color: inherit; /* Make links inherit the text color */
+    color: #00ff00; /* Green links for consistency */
     text-decoration: none; /* Remove underline from links */
 }
 
@@ -25,3 +25,4 @@ ul, ol {
     padding-left: 0; /* Remove padding for lists */
     margin: 0; /* Remove margin */
 }
+
