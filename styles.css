@@ -4,7 +4,7 @@ body {
     padding: 20px; /* Add some padding */
     background-color: #000; /* Black background for a terminal feel */
     color: #fff; /* White text color */
-    line-height: 1.2; /* Reduce line height for tighter spacing */
+    line-height: 1.4; /* Reduce line height for tighter spacing */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -17,12 +17,16 @@ p, ul, ol, li {
     color: #fff; /* Ensure text is white */
 }
 
-a {
-    color: #fff; /* White links for consistency */
-    text-decoration: none; /* Remove underline from links */
+p {
+    margin-bottom: 10px; /* Add some space between paragraphs */
 }
 
 ul, ol {
-    padding-left: 0; /* Remove padding for lists */
+    padding-left: 20px; /* Indent lists for better readability */
     margin: 0; /* Remove margin */
+}
+
+a {
+    color: #fff; /* White links for consistency */
+    text-decoration: none; /* Remove underline from links */
 }
