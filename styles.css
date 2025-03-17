@@ -19,3 +19,30 @@ img {
     max-width: 100%; /* Make images responsive */
     height: auto;
 }
+
+/* Additional styles for better formatting */
+h2 {
+    font-size: 1.5em; /* Adjust heading size */
+    margin-top: 20px; /* Add space above */
+}
+
+h3 {
+    font-size: 1.2em; /* Adjust heading size */
+    margin-top: 15px; /* Add space above */
+}
+
+p {
+    margin-bottom: 10px; /* Add space between paragraphs */
+}
+
+/* Reset styles for lists */
+ul, ol {
+    padding-left: 20px; /* Add padding for lists */
+    margin: 0; /* Remove margin */
+}
+
+/* Reset styles for links */
+a {
+    color: inherit; /* Make links inherit the text color */
+    text-decoration: none; /* Remove underline from links */
+}
