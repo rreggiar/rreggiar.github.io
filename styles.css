@@ -1,5 +1,12 @@
+@font-face {
+    font-family: 'Nerdo Mono';
+    src: url('fonts/HackNerdFontMono-Regular.ttf') format('truetype'); /* Adjust the path and format as needed */
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: 'Nerd Mono', 'Courier New', Courier, monospace; /* Monospace font for a hacker look */
+    font-family: 'Nerd Mono', monospace; /* Monospace font for a hacker look */
     margin: 0;
     padding: 20px; /* Add some padding */
     background-color: #000; /* Black background for a terminal feel */

@@ -1,4 +1,3 @@
-<link href="https://fonts.googleapis.com/css2?family=Nerdo+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 Roman Reggiardo, PhD
 
