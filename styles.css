@@ -4,7 +4,8 @@ body {
     margin: 0;
     padding: 20px; /* Add some padding */
     background-color: #000; /* Black background for a terminal feel */
-    color: #00ff00; /* Green text color for a classic terminal look */
+    color: #fff; /* White text color */
+    line-height: 1.2; /* Reduce line height for tighter spacing */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -14,11 +15,11 @@ h1, h2, h3, h4, h5, h6 {
 p, ul, ol, li {
     margin: 0; /* Remove margins */
     padding: 0; /* Remove padding */
-    color: #00ff00; /* Ensure text is green */
+    color: #fff; /* Ensure text is white */
 }
 
 a {
-    color: #00ff00; /* Green links for consistency */
+    color: #fff; /* White links for consistency */
     text-decoration: none; /* Remove underline from links */
 }
 
@@ -26,4 +27,3 @@ ul, ol {
     padding-left: 0; /* Remove padding for lists */
     margin: 0; /* Remove margin */
 }
-
