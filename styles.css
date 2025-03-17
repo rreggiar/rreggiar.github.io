@@ -3,7 +3,7 @@ body {
     white-space: pre; /* Preserve whitespace and line breaks */
     margin: 0;
     padding: 20px; /* Add some padding */
-    background-color: yellow;/*#f5f5f5; /* Light background for contrast */
+    background-color: #f5f5f5; /* Light background for contrast */
     color: #333; /* Dark text color */
 }
 
