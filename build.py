@@ -98,6 +98,7 @@ def build_index():
         posts=[],
         title=meta.get("title", "Home"),  # Get from meta or use default
         subtitle=meta.get("subtitle", ""),
+        current_year=datetime.now().year,  # Add this
         # Don't unpack meta here to avoid conflicts
     )
 

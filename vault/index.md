@@ -8,7 +8,7 @@ now: RNA engineering and mechanism @ Stanford [RNA Medicine Program](https://www
 
 - coming soon: building better RNAs and figuring out why they work
 
-then: liquid biopsy @ UC Santa Cruz (RNA) and ClearNote (5-hydroxymethylation DNA)
+then: liquid biopsy @ UC Santa Cruz (extracellular RNA) and ClearNote (5-hydroxymethylated DNA)
 
 - [ancient, repetitive RNA is abundant and potentially diagnostic](https://www.nature.com/articles/s41551-023-01081-7)
 - [Epigenomic Blood-Based Early Detection of Pancreatic Cancer Employing Cell-Free DNA](https://www.cghjournal.org/article/S1542-3565%2823%2900224-0/fulltext)
