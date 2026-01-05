@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <img src="/headshot.jpg" alt="Roman E. Reggiardo" class="headshot">
+        <h1>Roman E. Reggiardo, PhD</h1>
+        {% if subtitle %}
+        <p class="subtitle">{{ subtitle }}</p>
+        {% endif %}
+        <nav>
+            <a href="/">Home</a>
+            <a href="#posts">Posts</a>
+        </nav>
+    </header>
+
+    <main>
+        {{ content | safe }}
+
+        {% if posts %}
+        <section id="posts">
+            <h2>Recent Posts</h2>
+            <ul class="post-list">
+            {% for post in posts %}
+                <li>
+                    <time>{{ post.date }}</time>
+                    <a href="/{{ post.url }}">{{ post.title }}</a>
+                    {% if post.description %}
+                    <p>{{ post.description }}</p>
+                    {% endif %}
+                </li>
+            {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+    </main>
+
+    <footer>
+        <p>Built from Obsidian vault • <a href="https://github.com/rreggiar">GitHub</a></p>
+    </footer>
+</body>
+</html>

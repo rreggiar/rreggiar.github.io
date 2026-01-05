@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="/">Your Name</a></h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/posts">Posts</a>
+            <a href="/projects">Projects</a>
+        </nav>
+    </header>
+
+    <main>
+        {{ content | safe }}
+    </main>
+
+    <footer>
+        <p>Built from Obsidian vault • <a href="https://github.com/yourusername">GitHub</a></p>
+    </footer>
+</body>
+</html>
