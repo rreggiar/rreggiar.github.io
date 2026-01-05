@@ -4,7 +4,7 @@ subtitle: rreggiar [at] {stanford.edu, github, bsky}
 ---
 trying to build a better future with biology and computers (and occasionally [soap dispensers](https://wonderfil.world))
 
-now: RNA engineering and mechanism @ Stanford [RNA Medicine Program](https://www.stanfordrnamedicine.com)
+now: RNA engineering and mechanism @ Stanford [RNA Medicine Program](https://www.stanfordrnamedicine.com) with Will Greenleaf (fmr: Howard Chang, now at Amgen)
 
 - coming soon: building better RNAs and figuring out why they work
 
