@@ -1,6 +1,6 @@
 ---
 title: Roman E. Reggiardo, PhD
-subtitle: rreggiar [at] {stanford.edu}
+subtitle: rreggiar [at] stanford.edu
 ---
 # Hello, I'm Roman
 
