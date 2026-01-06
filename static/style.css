@@ -310,3 +310,41 @@ footer a:hover {
         margin: 5px 10px 5px 0;
     }
 }
+
+/* Single column layout for pages */
+main.single-column {
+    max-width: 900px;
+    margin: 0 auto 80px auto;
+}
+
+/* Abstract styling */
+.abstract {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.abstract summary {
+    cursor: pointer;
+    color: var(--link);
+    font-size: 12px;
+    padding: 5px 0;
+    user-select: none;
+}
+
+.abstract summary:hover {
+    text-decoration: underline;
+}
+
+.abstract p {
+    margin-top: 10px;
+    padding: 15px;
+    background: var(--code-bg);
+    border-left: 3px solid var(--link);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.abstract[open] summary {
+    margin-bottom: 5px;
+}

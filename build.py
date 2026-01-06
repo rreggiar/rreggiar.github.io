@@ -125,70 +125,6 @@ def fetch_zotero_publications():
     return featured, collaborations
 
 
-def format_publication_html(pub):
-    """Format a single publication as HTML"""
-    html = f'<div class="publication">\n'
-    html += f"  <strong>{pub['title']}</strong><br>\n"
-
-    # Authors only (not editors)
-    if pub["author_string"]:
-        html += f'  <span class="authors">{pub["author_string"]}</span><br>\n'
-
-    # Venue info based on item type
-    venue_parts = []
-
-    if pub["item_type"] == "journalArticle":
-        # Journal article: Journal Name Volume, Pages (Year)
-        venue = pub["venue"]
-        if pub["volume"]:
-            venue += f" {pub['volume']}"
-        if pub["pages"]:
-            venue += f", {pub['pages']}"
-        venue_parts.append(f"<em>{venue}</em>")
-
-    elif pub["item_type"] == "bookSection":
-        # Book chapter: In: Book Title, Pages (Year)
-        venue = f"In: {pub['venue']}"
-        if pub["pages"]:
-            venue += f", pp. {pub['pages']}"
-        venue_parts.append(f"<em>{venue}</em>")
-
-    elif pub["item_type"] == "conferencePaper":
-        # Conference: Proceedings Name (Year)
-        venue_parts.append(f"<em>{pub['venue']}</em>")
-
-    elif pub["item_type"] == "book":
-        # Book: Publisher (Year)
-        if pub["publisher"]:
-            venue_parts.append(f"<em>{pub['publisher']}</em>")
-
-    # Add year
-    if pub["year"]:
-        venue_parts.append(f"({pub['year']})")
-
-    if venue_parts:
-        html += f"  {' '.join(venue_parts)}<br>\n"
-
-    # Editors (if any)
-    if pub["editor_string"]:
-        html += (
-            f'  <span class="editors">Edited by: {pub["editor_string"]}</span><br>\n'
-        )
-
-    # Links
-    links = []
-    if pub["doi"]:
-        links.append(f'<a href="https://doi.org/{pub["doi"]}">DOI</a>')
-    if pub["url"] and not pub["doi"]:
-        links.append(f'<a href="{pub["url"]}">Link</a>')
-
-    if links:
-        html += f"  {' • '.join(links)}\n"
-
-    html += "</div>\n"
-    return html
-
-
 def read_template(name):
     template_path = TEMPLATE_DIR / name
     print(f"Reading template: {template_path}")
@@ -260,6 +196,8 @@ def build_index():
     output_file.write_text(rendered)
     print(f"✓ Built: {output_file}")
 
+    build_publications_page(featured=featured, collaborations=collaborations)
+
 
 def copy_static():
     """Copy static files to output"""
@@ -274,6 +212,115 @@ def copy_static():
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(item, dest)
             print(f"Copied: {rel_path}")
+
+
+def format_publication_html(pub, include_abstract=False):
+    """Format a single publication as HTML"""
+    html = f'<div class="publication">\n'
+    html += f"  <strong>{pub['title']}</strong><br>\n"
+
+    # Authors only (not editors)
+    if pub["author_string"]:
+        html += f'  <span class="authors">{pub["author_string"]}</span><br>\n'
+
+    # Venue info based on item type
+    venue_parts = []
+
+    if pub["item_type"] == "journalArticle":
+        venue = pub["venue"]
+        if pub["volume"]:
+            venue += f" {pub['volume']}"
+        if pub["pages"]:
+            venue += f", {pub['pages']}"
+        venue_parts.append(f"<em>{venue}</em>")
+
+    elif pub["item_type"] == "bookSection":
+        venue = f"In: {pub['venue']}"
+        if pub["pages"]:
+            venue += f", pp. {pub['pages']}"
+        venue_parts.append(f"<em>{venue}</em>")
+
+    elif pub["item_type"] == "conferencePaper":
+        venue_parts.append(f"<em>{pub['venue']}</em>")
+
+    elif pub["item_type"] == "book":
+        if pub["publisher"]:
+            venue_parts.append(f"<em>{pub['publisher']}</em>")
+
+    # Add year
+    if pub["year"]:
+        venue_parts.append(f"({pub['year']})")
+
+    if venue_parts:
+        html += f"  {' '.join(venue_parts)}<br>\n"
+
+    # Editors (if any)
+    if pub["editor_string"]:
+        html += (
+            f'  <span class="editors">Edited by: {pub["editor_string"]}</span><br>\n'
+        )
+
+    # Abstract (if requested)
+    if include_abstract and pub["abstract"]:
+        html += f'  <details class="abstract">\n'
+        html += f"    <summary>Abstract</summary>\n"
+        html += f"    <p>{pub['abstract']}</p>\n"
+        html += f"  </details>\n"
+
+    # Links
+    links = []
+    if pub["doi"]:
+        links.append(f'<a href="https://doi.org/{pub["doi"]}">DOI</a>')
+    if pub["url"] and not pub["doi"]:
+        links.append(f'<a href="{pub["url"]}">Link</a>')
+
+    if links:
+        html += f"  {' • '.join(links)}\n"
+
+    html += "</div>\n"
+    return html
+
+
+def build_publications_page(featured, collaborations):
+    """Build standalone publications page with abstracts"""
+    pubs_md = VAULT_DIR / "publications.md"
+
+    if not pubs_md.exists():
+        print(f"Warning: {pubs_md} not found, skipping publications page")
+        return
+
+    html_content, meta = parse_markdown(pubs_md)
+
+    # Format publications with abstracts
+    featured_html = ""
+    if featured:
+        featured_html = (
+            '<section id="featured-publications">\n<h2>featured publications</h2>\n'
+        )
+        for pub in featured:
+            featured_html += format_publication_html(pub, include_abstract=True)
+        featured_html += "</section>\n"
+
+    collab_html = ""
+    if collaborations:
+        collab_html = '<section id="collaborations">\n<h2>collaborations</h2>\n'
+        for pub in collaborations:
+            collab_html += format_publication_html(pub, include_abstract=True)
+        collab_html += "</section>\n"
+
+    template = Template(read_template("page.html"))
+
+    rendered = template.render(
+        content=html_content,
+        publications=featured_html + collab_html,
+        title=meta.get("title", "Publications"),
+        subtitle=meta.get("subtitle", ""),
+        current_year=datetime.now().year,
+    )
+
+    output_file = OUTPUT_DIR / "publications.html"
+    output_file.write_text(rendered)
+    print(f"✓ Built: {output_file}")
 
 
 def main():
