@@ -18,10 +18,9 @@
 
 body {
     font-family: var(--font-mono);
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.7;
-    max-width: 800px;
-    margin: 0 auto;
+    margin: 0;
     padding: 40px 20px;
     background: var(--bg);
     color: var(--text);
@@ -49,6 +48,13 @@ header h1 {
     font-weight: 700;
 }
 
+.subtitle {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0 15px 0;
+    font-style: italic;
+}
+
 header::after {
     content: "";
     display: table;
@@ -56,7 +62,7 @@ header::after {
 }
 
 nav {
-    font-size: 16px;
+    font-size: 13px;
 }
 
 nav a {
@@ -69,8 +75,103 @@ nav a:hover {
     text-decoration: underline;
 }
 
-main {
+/* Two-column layout - 25% left, 75% right */
+main.two-column {
+    display: grid;
+    grid-template-columns: 1fr 3fr;  /* Swapped: 25% / 75% ratio */
+    gap: 60px;
     margin-bottom: 80px;
+}
+
+.main-content {
+    min-width: 0; /* Prevents grid blowout */
+}
+
+.sidebar {
+    position: sticky;
+    top: 20px;
+    align-self: start;
+    font-size: 17px;  /* Increased from 13px - 4 steps larger */
+    margin-top: -10px;
+}
+
+.sidebar h2 {
+    font-size: 18px;  /* Increased from 14px */
+    margin: 0 0 15px 0;
+    font-weight: 700;
+}
+
+.sidebar h3 {
+    font-size: 17px;  /* Increased from 13px */
+    margin: 25px 0 12px 0;
+    font-weight: 700;
+}
+
+.sidebar p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.sidebar > *:first-child {
+    margin-top: 0;  /* Remove top margin from first paragraph */
+}
+
+.sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 8px;
+}
+
+.sidebar a {
+    color: var(--link);
+}
+
+
+/* Publication styling */
+.publication {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.publication:last-child {
+    border-bottom: none;
+}
+
+.publication strong {
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.publication .authors {
+    color: #555;
+    font-size: 13px;
+}
+
+.publication em {
+    color: #666;
+    font-size: 13px;
+}
+
+.publication a {
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+#featured-publications,
+#collaborations {
+    margin-bottom: 60px;
+}
+
+#featured-publications h2,
+#collaborations h2 {
+    font-size: 18px;
+    margin: 0 0 30px 0;
+    font-weight: 700;
 }
 
 h1, h2, h3 {
@@ -88,6 +189,11 @@ p {
 
 a {
     color: var(--link);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 code {
@@ -156,18 +262,38 @@ li {
 footer {
     border-top: 1px solid var(--border);
     padding-top: 20px;
+    margin-top: 60px;
     font-size: 12px;
+    color: #666;
+    line-height: 1.8;
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+footer a {
     color: #666;
 }
 
-.subtitle {
-    font-size: 16px;
-    /*color: #666;*/
-    margin: 5px 0 15px 0;
-    font-style: bold;
+footer a:hover {
+    color: var(--link);
 }
 
-/* Responsive */
+/* Responsive - stack columns on small screens */
+@media (max-width: 900px) {
+    main.two-column {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .sidebar {
+        position: static;
+        border-top: 1px solid var(--border);
+        padding-top: 40px;
+    }
+}
+
 @media (max-width: 600px) {
     body {
         font-size: 13px;

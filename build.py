@@ -47,17 +47,27 @@ def fetch_zotero_publications():
         data = item["data"]
 
         # Skip non-publication items
-        if data["itemType"] not in ["journalArticle", "conferencePaper", "bookSection"]:
+        if data["itemType"] not in [
+            "journalArticle",
+            "conferencePaper",
+            "bookSection",
+            "book",
+        ]:
             continue
 
-        # Extract creators (authors)
+        # Extract creators - separate authors and editors
         authors = []
+        editors = []
         if "creators" in data:
             for creator in data["creators"]:
-                if creator.get("creatorType") in ["author", "editor"]:
-                    last = creator.get("lastName", "")
-                    first = creator.get("firstName", "")
-                    authors.append(f"{first} {last}".strip())
+                last = creator.get("lastName", "")
+                first = creator.get("firstName", "")
+                name = f"{first} {last}".strip()
+
+                if creator.get("creatorType") == "author":
+                    authors.append(name)
+                elif creator.get("creatorType") == "editor":
+                    editors.append(name)
 
         # Check if you're first author
         is_first_author = False
@@ -67,13 +77,27 @@ def fetch_zotero_publications():
         # Extract DOI
         doi = data.get("DOI", "")
 
+        # Get publication venue based on type
+        venue = ""
+        if data["itemType"] == "journalArticle":
+            venue = data.get("publicationTitle", "")
+        elif data["itemType"] == "conferencePaper":
+            venue = data.get("proceedingsTitle", data.get("publicationTitle", ""))
+        elif data["itemType"] == "bookSection":
+            venue = data.get("bookTitle", "")
+        elif data["itemType"] == "book":
+            venue = data.get("publisher", "")
+
         # Build publication dict
         pub = {
             "title": data.get("title", "Untitled"),
             "authors": authors,
+            "editors": editors,
             "author_string": ", ".join(authors),
+            "editor_string": ", ".join(editors),
             "year": data.get("date", "")[:4] if data.get("date") else "",
-            "journal": data.get("publicationTitle", ""),
+            "venue": venue,
+            "journal": data.get("publicationTitle", ""),  # Keep for backwards compat
             "volume": data.get("volume", ""),
             "pages": data.get("pages", ""),
             "doi": doi,
@@ -81,6 +105,7 @@ def fetch_zotero_publications():
             "abstract": data.get("abstractNote", ""),
             "is_first_author": is_first_author,
             "item_type": data["itemType"],
+            "publisher": data.get("publisher", ""),
         }
 
         publications.append(pub)
@@ -104,16 +129,51 @@ def format_publication_html(pub):
     """Format a single publication as HTML"""
     html = f'<div class="publication">\n'
     html += f"  <strong>{pub['title']}</strong><br>\n"
-    html += f'  <span class="authors">{pub["author_string"]}</span><br>\n'
 
-    # Journal info
-    journal_info = pub["journal"]
-    if pub["volume"]:
-        journal_info += f" {pub['volume']}"
-    if pub["pages"]:
-        journal_info += f", {pub['pages']}"
+    # Authors only (not editors)
+    if pub["author_string"]:
+        html += f'  <span class="authors">{pub["author_string"]}</span><br>\n'
 
-    html += f"  <em>{journal_info}</em> ({pub['year']})<br>\n"
+    # Venue info based on item type
+    venue_parts = []
+
+    if pub["item_type"] == "journalArticle":
+        # Journal article: Journal Name Volume, Pages (Year)
+        venue = pub["venue"]
+        if pub["volume"]:
+            venue += f" {pub['volume']}"
+        if pub["pages"]:
+            venue += f", {pub['pages']}"
+        venue_parts.append(f"<em>{venue}</em>")
+
+    elif pub["item_type"] == "bookSection":
+        # Book chapter: In: Book Title, Pages (Year)
+        venue = f"In: {pub['venue']}"
+        if pub["pages"]:
+            venue += f", pp. {pub['pages']}"
+        venue_parts.append(f"<em>{venue}</em>")
+
+    elif pub["item_type"] == "conferencePaper":
+        # Conference: Proceedings Name (Year)
+        venue_parts.append(f"<em>{pub['venue']}</em>")
+
+    elif pub["item_type"] == "book":
+        # Book: Publisher (Year)
+        if pub["publisher"]:
+            venue_parts.append(f"<em>{pub['publisher']}</em>")
+
+    # Add year
+    if pub["year"]:
+        venue_parts.append(f"({pub['year']})")
+
+    if venue_parts:
+        html += f"  {' '.join(venue_parts)}<br>\n"
+
+    # Editors (if any)
+    if pub["editor_string"]:
+        html += (
+            f'  <span class="editors">Edited by: {pub["editor_string"]}</span><br>\n'
+        )
 
     # Links
     links = []
