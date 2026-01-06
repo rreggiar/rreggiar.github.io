@@ -27,7 +27,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install markdown jinja2 pyyaml pygments
+        run: pip install markdown jinja2 pyyaml pygments pyzotero python-dotenv
 
       - name: Build site
         env:
