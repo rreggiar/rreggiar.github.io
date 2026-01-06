@@ -30,6 +30,11 @@ jobs:
         run: pip install markdown jinja2 pyyaml pygments
 
       - name: Build site
+        env:
+          ZOTERO_USER_ID: ${{ secrets.ZOTERO_USER_ID }}
+          ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
+          ZOTERO_COLLECTION_KEY: ${{ secrets.ZOTERO_COLLECTION_KEY }}
+          YOUR_LAST_NAME: Reggiardo
         run: python build.py
 
       - name: Upload artifact
