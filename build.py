@@ -231,7 +231,7 @@ def build_index():
     featured_html = ""
     if featured:
         featured_html = (
-            '<section id="featured-publications">\n<h2>Featured Publications</h2>\n'
+            '<section id="featured-publications">\n<h2>featured publications</h2>\n'
         )
         for pub in featured:
             featured_html += format_publication_html(pub)
@@ -239,7 +239,7 @@ def build_index():
 
     collab_html = ""
     if collaborations:
-        collab_html = '<section id="collaborations">\n<h2>Collaborations</h2>\n'
+        collab_html = '<section id="collaborations">\n<h2>collaborations</h2>\n'
         for pub in collaborations:
             collab_html += format_publication_html(pub)
         collab_html += "</section>\n"

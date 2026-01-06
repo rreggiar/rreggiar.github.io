@@ -2,7 +2,7 @@
 title: Roman E. Reggiardo, PhD
 subtitle: rreggiar [at] stanford.edu
 ---
-# Hello, I'm Roman
+# hello, I'm Roman
 
 I'm a scientist trying to build a better future with biology and computers (and occasionally [soap dispensers](https://wonderfil.world)).
 
@@ -12,7 +12,7 @@ Honored to be supported by a life-altering NIH NIDDK F99/K00 award.
 
 During my PhD, I built a liquid biopsy technology @ UC Santa Cruz using repetitive extracellular RNA and contributed to liquid biopsy tech development @ ClearNote health using 5-hydroxymethylated DNA circulating in blood plasma.
 
-# Links
+# links
 
 [stanford](https://profiles.stanford.edu/roman-reggiardo)  
 [github](https://github.com/rreggiar)  
