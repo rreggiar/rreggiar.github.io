@@ -281,7 +281,7 @@ footer a:hover {
 }
 
 /* Responsive - stack columns on small screens */
-@media (max-width: 1400px) {
+@media (max-width: 600px) {
     main.two-column {
         grid-template-columns: 1fr;
         gap: 40px;
