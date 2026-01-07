@@ -397,7 +397,7 @@ def build_posts_index(posts):
     rendered = template.render(
         posts=posts,
         title="Posts - Roman E. Reggiardo, PhD",
-        subtitle="building with biology and computers",
+        subtitle="rreggiar [at] stanford.edu",
         current_year=datetime.now().year,
     )
 

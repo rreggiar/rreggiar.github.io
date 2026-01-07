@@ -11,10 +11,13 @@
 <body>
     <header>
         <h1><a href="/">Roman E. Reggiardo, PhD</a></h1>
+        {% if subtitle %}
+        <p class="subtitle">{{ subtitle }}</p>
+        {% endif %}
         <nav>
-            <a href="/">Home</a>
-            <a href="/publications.html">Publications</a>
-            <a href="/posts/">Posts</a>
+            <a href="/">home</a>
+            <a href="/publications.html">publications</a>
+            <a href="/posts/">posts</a>
         </nav>
     </header>
 
