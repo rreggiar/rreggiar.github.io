@@ -163,6 +163,10 @@ def build_index():
     # Fetch publications from Zotero
     featured, collaborations = fetch_zotero_publications()
 
+    # Collect posts
+    posts = collect_posts()
+    recent_posts = posts[:5]  # Show 5 most recent on homepage
+
     # Format publications as HTML
     featured_html = ""
     if featured:
@@ -197,6 +201,11 @@ def build_index():
     print(f"✓ Built: {output_file}")
 
     build_publications_page(featured=featured, collaborations=collaborations)
+
+    # Build individual posts and posts index
+    for post in posts:
+        build_post(post)
+    build_posts_index(posts)
 
 
 def copy_static():
@@ -322,75 +331,80 @@ def build_publications_page(featured, collaborations):
     output_file.write_text(rendered)
     print(f"✓ Built: {output_file}")
 
-    def collect_posts():
+
+def collect_posts():
     """Collect all posts with metadata for index"""
     posts = []
-    posts_dir = VAULT_DIR / 'posts'
-    
+    posts_dir = VAULT_DIR / "posts"
+
     if not posts_dir.exists():
         print("No posts directory found")
         return []
-    
-    for md_file in sorted(posts_dir.glob('*.md')):
+
+    for md_file in sorted(posts_dir.glob("*.md")):
         html_content, meta = parse_markdown(md_file)
-        
+
         # Extract date from filename if not in frontmatter
-        date = meta.get('date', '')
+        date = meta.get("date", "")
         if not date:
             # Try to parse from filename: YYYY-MM-DD_title.md
-            date_match = re.match(r'(\d{4}-\d{2}-\d{2})', md_file.stem)
+            date_match = re.match(r"(\d{4}-\d{2}-\d{2})", md_file.stem)
             if date_match:
                 date = date_match.group(1)
-        
-        posts.append({
-            'title': meta.get('title', md_file.stem),
-            'date': date,
-            'slug': md_file.stem,
-            'url': f'posts/{md_file.stem}.html',
-            'description': meta.get('description', ''),
-            'content': html_content,
-        })
-    
+
+        posts.append(
+            {
+                "title": meta.get("title", md_file.stem),
+                "date": date,
+                "slug": md_file.stem,
+                "url": f"posts/{md_file.stem}.html",
+                "description": meta.get("description", ""),
+                "content": html_content,
+            }
+        )
+
     # Sort by date, newest first
-    posts.sort(key=lambda x: x['date'], reverse=True)
+    posts.sort(key=lambda x: x["date"], reverse=True)
     print(f"✓ Found {len(posts)} posts")
     return posts
 
+
 def build_post(post):
     """Build individual post page"""
-    template = Template(read_template('post.html'))
-    
+    template = Template(read_template("post.html"))
+
     rendered = template.render(
-        title=post['title'],
-        date=post['date'],
-        content=post['content'],
-        description=post['description'],
+        title=post["title"],
+        date=post["date"],
+        content=post["content"],
+        description=post["description"],
         current_year=datetime.now().year,
     )
-    
+
     # Create posts directory in output
-    posts_dir = OUTPUT_DIR / 'posts'
+    posts_dir = OUTPUT_DIR / "posts"
     posts_dir.mkdir(exist_ok=True)
-    
+
     output_file = posts_dir / f"{post['slug']}.html"
     output_file.write_text(rendered)
     print(f"  Built post: {post['slug']}")
 
+
 def build_posts_index(posts):
     """Build /posts page with all posts"""
-    template = Template(read_template('posts-index.html'))
-    
+    template = Template(read_template("posts-index.html"))
+
     rendered = template.render(
         posts=posts,
-        title='Posts - Roman E. Reggiardo, PhD',
-        subtitle='building with biology and computers',
+        title="Posts - Roman E. Reggiardo, PhD",
+        subtitle="building with biology and computers",
         current_year=datetime.now().year,
     )
-    
-    posts_dir = OUTPUT_DIR / 'posts'
+
+    posts_dir = OUTPUT_DIR / "posts"
     posts_dir.mkdir(exist_ok=True)
-    
-    output_file = posts_dir / 'index.html'
+
+    output_file = posts_dir / "index.html"
     output_file.write_text(rendered)
     print(f"✓ Built posts index with {len(posts)} posts")
 
