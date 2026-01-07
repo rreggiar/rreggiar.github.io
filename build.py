@@ -190,7 +190,7 @@ def build_index():
         content=html_content,
         featured_publications=featured_html,
         collaborations=collab_html,
-        posts=[],
+        posts=recent_posts,
         title=meta.get("title", "Home"),
         subtitle=meta.get("subtitle", ""),
         current_year=datetime.now().year,
