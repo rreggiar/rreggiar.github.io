@@ -18,36 +18,32 @@
         <nav>
             <a href="/">home</a>
             <a href="publications.html">publications</a>
-            <a href="#posts">posts</a>
+            <a href="/posts/">posts</a>
         </nav>
     </header>
 
     <main class="two-column">
         <aside class="sidebar">
             {{ content | safe }}
+            
+            {% if posts %}
+            <h1>recent posts</h1>
+            <ul class="sidebar-posts">
+            {% for post in posts %}
+                <li>
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                    <time>{{ post.date }}</time>
+                </li>
+            {% endfor %}
+            </ul>
+            <p><a href="posts/">all posts →</a></p>
+            {% endif %}
         </aside>
 
         <div class="main-content">
             {{ featured_publications | safe }}
             
             {{ collaborations | safe }}
-
-            {% if posts %}
-            <section id="posts">
-                <h2>Recent Posts</h2>
-                <ul class="post-list">
-                {% for post in posts %}
-                    <li>
-                        <time>{{ post.date }}</time>
-                        <a href="/{{ post.url }}">{{ post.title }}</a>
-                        {% if post.description %}
-                        <p>{{ post.description }}</p>
-                        {% endif %}
-                    </li>
-                {% endfor %}
-                </ul>
-            </section>
-            {% endif %}
         </div>
     </main>
 

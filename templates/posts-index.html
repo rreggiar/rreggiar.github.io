@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Roman E. Reggiardo">
-    <meta name="description" content="{{ description }}">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <header>
         <h1><a href="/">Roman E. Reggiardo, PhD</a></h1>
+        {% if subtitle %}
+        <p class="subtitle">{{ subtitle }}</p>
+        {% endif %}
         <nav>
             <a href="/">Home</a>
             <a href="/publications.html">Publications</a>
@@ -19,20 +21,19 @@
     </header>
 
     <main class="single-column">
-        <article class="post">
-            <header class="post-header">
-                <h1>{{ title }}</h1>
-                <time datetime="{{ date }}">{{ date }}</time>
-            </header>
-            
-            <div class="post-content">
-                {{ content | safe }}
-            </div>
-        </article>
+        <h1>All Posts</h1>
         
-        <nav class="post-nav">
-            <a href="/posts/">← All Posts</a>
-        </nav>
+        <ul class="post-list">
+        {% for post in posts %}
+            <li>
+                <time>{{ post.date }}</time>
+                <a href="/{{ post.url }}">{{ post.title }}</a>
+                {% if post.description %}
+                <p>{{ post.description }}</p>
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
     </main>
 
     <footer>
