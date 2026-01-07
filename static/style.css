@@ -348,3 +348,88 @@ main.single-column {
 .abstract[open] summary {
     margin-bottom: 5px;
 }
+
+/* Post styling */
+.post {
+    margin-bottom: 60px;
+}
+
+.post-header {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.post-header h1 {
+    margin: 0 0 10px 0;
+    font-size: 32px;  /* Increased from 28px */
+}
+
+.post-header time {
+    color: var(--muted);
+    font-size: 16px;  /* Increased from 13px */
+}
+
+.post-content {
+    line-height: 1.8;
+    font-size: 17px;  /* Add this - increases base text size */
+}
+
+.post-content h1 {
+    font-size: 28px;  /* Increased from 24px */
+    margin: 40px 0 20px 0;
+}
+
+.post-content h2 {
+    font-size: 24px;  /* Increased from 20px */
+    margin: 35px 0 15px 0;
+}
+
+.post-content h3 {
+    font-size: 20px;  /* Increased from 17px */
+    margin: 30px 0 12px 0;
+}
+
+.post-content p {
+    font-size: 17px;  /* Explicit paragraph size */
+    margin-bottom: 20px;
+}
+
+.post-content code {
+    font-size: 16px;  /* Increased from default */
+}
+
+.post-content pre code {
+    font-size: 15px;  /* Slightly smaller in code blocks */
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+.post-content blockquote {
+    border-left: 3px solid var(--link);
+    padding-left: 20px;
+    margin: 20px 0;
+    color: var(--muted);
+    font-style: italic;
+    font-size: 17px;  /* Match body text */
+}
+
+.post-nav {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.post-nav a {
+    color: var(--link);
+    text-decoration: none;
+    font-size: 16px;  /* Increased from 14px */
+}
+
+.post-nav a:hover {
+    text-decoration: underline;
+}
